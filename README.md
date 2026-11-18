@@ -4,7 +4,7 @@
 
 **English** · [繁體中文（台灣）](README.zh-TW.md)
 
-Version: install package **v1.3.1**, operating manual **v1.3**, previs builder **1.0**, Film Production Knowledge Library **v1 (package edition 1.3)** · 2026-11-18 (UTC+8) · public repository
+Version: install package **v1.3.2**, operating manual **v1.3**, previs builder **1.0**, Film Production Knowledge Library **v1 (package edition 1.3)** · 2026-11-18 (UTC+8) · public repository
 
 ---
 

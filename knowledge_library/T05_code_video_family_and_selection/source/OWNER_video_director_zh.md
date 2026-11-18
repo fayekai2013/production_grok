@@ -1,7 +1,7 @@
 # video-director（給 Claude 的 AI 影片導演 Skill，賣點是量測式自動質檢）
 
 日期：2026-10-30 入庫
-來源：Felix 2026-10-30 分享的 X 貼文（AI超元域 @aisuperdomain，2026-10-29）
+來源：本套件作者 2026-10-30 分享的 X 貼文（AI超元域 @aisuperdomain，2026-10-29）
 查證（GitHub API，2026-10-30）：repo `win4r/video-director`，111 stars、6 forks，2026-10-28 建立（貼文前一天），MIT，Python。repo 尚新、體量小；結構與文件已讀 README 與 METHODOLOGY.md 本人確認，效果宣稱未驗證。
 
 ## 一句話概念

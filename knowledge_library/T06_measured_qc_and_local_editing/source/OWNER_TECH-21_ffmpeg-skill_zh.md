@@ -1,6 +1,6 @@
 # ffmpeg-skill（kajisho5）：給 coding agent 的本地影片剪輯引擎
 
-入庫：2026-11-05（Felix 指定了解；repo 與 README 已查證，GitHub API：4,575 stars、367 forks、2026-09-03 建立、MIT、Python，最後 push 2026-11-05；版本已到 3.0.0）
+入庫：2026-11-05（本套件作者指定了解；repo 與 README 已查證，GitHub API：4,575 stars、367 forks、2026-09-03 建立、MIT、Python，最後 push 2026-11-05；版本已到 3.0.0）
 
 ## 是什麼
 

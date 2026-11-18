@@ -1,7 +1,7 @@
 # Lemo-Opuscar（用程式碼做片的風格工具箱）
 
 日期：2026-10-22 入庫
-來源：Felix 2026-10-22 分享的 X 貼文（Lemomo @lemomo_ai，2026-10-22），原文為 X Article《Lemo-Opuscar 史诗级更新：8 种新风格 + 新改编玩法，我把风格库变成了风格制作工具箱》
+來源：本套件作者 2026-10-22 分享的 X 貼文（Lemomo @lemomo_ai，2026-10-22），原文為 X Article《Lemo-Opuscar 史诗级更新：8 种新风格 + 新改编玩法，我把风格库变成了风格制作工具箱》
 查證（GitHub API，2026-10-22）：repo `lemomo-ai/lemo-opuscar`，5,287 stars、573 forks，2026-09-26 建立，MIT，JavaScript。repo 自述：59 種風格，每種是「風格 prompt + 完全用程式碼做出的 demo 片」，由 Claude Opus 5.5 製作，不使用影片生成模型。樣片畫廊：https://lemomo-ai.github.io/lemo-opuscar/
 
 ## 一句話概念

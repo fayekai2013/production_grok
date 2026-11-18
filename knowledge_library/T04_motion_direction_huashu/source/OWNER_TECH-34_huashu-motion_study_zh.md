@@ -1,8 +1,8 @@
-# huashu-motion 研究與 Felix 影片流程強化
+# huashu-motion 研究與本套件作者影片流程強化
 
 日期：2026-10-21
 對象 repo：alchaincyf/huashu-motion（skill 版本 0.1.1；本文件依據其 SKILL.md 與 references 實讀整理）
-任務前提（Felix 指定）：先判斷它與現行做法有沒有明顯差異；沒有取代性的差異，就讀它的 code 與邏輯，用來強化現行流程與 Prompt。
+任務前提（本套件作者指定）：先判斷它與現行做法有沒有明顯差異；沒有取代性的差異，就讀它的 code 與邏輯，用來強化現行流程與 Prompt。
 
 ## 一、它是什麼，跟 HyperFrames 的關係
 

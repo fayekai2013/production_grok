@@ -1,7 +1,7 @@
 # motion-video-kit（business-motion-film：給真實企業做高質感商業片的 Claude Code Skill）
 
 日期：2026-10-31 入庫
-來源：Felix 2026-10-31 分享 GitHub 連結。
+來源：本套件作者 2026-10-31 分享 GitHub 連結。
 查證（GitHub API 與 README，2026-10-31）：repo `echris6/motion-video-kit`，1,300 stars、114 forks，2026-09-27 建立，最後 push 2026-10-14，MIT。內容已讀 README 與目錄結構本人確認；品質宣稱屬作者案例自述。
 
 ## 一句話概念

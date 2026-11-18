@@ -72,7 +72,7 @@ Limits: suited to product launches, UI demos, kinetic type, data viz and short e
 ### 3.5 napali: the ceiling of code-rendered film, and the loop that got there [Owner study]
 - A single `index.html` (~5,300 lines, WebGL2 shaders) renders a drone flight over a coastline: no textures, models or downloaded assets (terrain with GPU erosion simulation, an FFT ocean, procedural vegetation, sky and light).
 - Made with Claude Code in **13 rounds**, with parallel specialists (water, sky, terrain, vegetation), a merge step and a **judge comparing each round's render against real reference photos**. "What can be copied is the iteration loop (specialist split + reference-photo judge), not a single prompt."
-- Owner's own test (2026-11-07, a VM without GPU): the generation stages ran, but the main render pass lost the WebGL context on every frame. This is a hardware gap. A mini version made with the same method rendered at 640×360, ~2–2.6 s/frame. Its judge round found grazing-angle sea reflections washed white and terrain too flat; fixes were measured and logged.
+- Owner's own test (2026-11-07, a cloud workspace without GPU): the generation stages ran, but the main render pass lost the WebGL context on every frame. This is a hardware gap. A mini version made with the same method rendered at 640×360, ~2–2.6 s/frame. Its judge round found grazing-angle sea reflections washed white and terrain too flat; fixes were measured and logged.
 - Selection implication: **heavy procedural scenes need a GPU machine**. Use a CPU box for spec, prototype, low-res composition and rhythm checks, then render finals on a GPU.
 
 ## 4. Phone / product demo stack [Owner study, generalised to any device or app]

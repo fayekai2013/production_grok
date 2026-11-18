@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.3.2 (2026-11-18, UTC+8)
+
+**Public-repository tidy-up (owner approval 2026-11-18); no rule changed.**
+
+- **knowledge_library/:** provenance lines in the owner's dossiers (`source/OWNER_*`) now say 本套件作者 ("the package author") instead of a personal name; dates, source links and third-party authors are unchanged. `OWNER_napali_zh.md`: machine- and assistant-specific wording neutralised (另一個 AI 助理 / 無 GPU 的雲端工作環境 / 一台配有 GPU 的電腦); technical content unchanged. T05 study notes: "a VM without GPU" → "a cloud workspace without GPU". The TECH-39 dossier is renamed `OWNER_TECH-39_dossier_zh.md`; LIBRARY_INDEX, T02 study notes and the UT_Codex CITATION point to the new name.
+
 ## v1.3.1 (2026-11-18, UTC+8)
 
 **Runnable previs builder: "draw the skeleton, motion and paths in Python first, then generate" (owner request 2026-11-18).**

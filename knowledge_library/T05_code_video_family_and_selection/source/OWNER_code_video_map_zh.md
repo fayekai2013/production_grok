@@ -1,11 +1,11 @@
 # Code-Video 方法地圖與手機 Demo 指南
 
-整理：2026-10-31（應 Felix 要求：需要了解這批影片製作方法，特別是做手機 Demo 時）
-材料：技術庫已入庫的六項（HyperFrames、huashu-motion、Lemo-Opuscar、Motion Engineering、video-director、motion-video-kit）＋ Felix 現行生成式管線（Nano Banana 生圖 → OpenRouter Kling v3.0 Pro／HeyGen 圖生影片）。全部屬實務者方法論，無第三方 benchmark，品質宣稱多為作者自述，本圖是定位與選型參考，不是效果保證。
+整理：2026-10-31（應本套件作者要求：需要了解這批影片製作方法，特別是做手機 Demo 時）
+材料：技術庫已入庫的六項（HyperFrames、huashu-motion、Lemo-Opuscar、Motion Engineering、video-director、motion-video-kit）＋ 本套件作者現行生成式管線（Nano Banana 生圖 → OpenRouter Kling v3.0 Pro／HeyGen 圖生影片）。全部屬實務者方法論，無第三方 benchmark，品質宣稱多為作者自述，本圖是定位與選型參考，不是效果保證。
 
 ## 一、先分兩大家族
 
-**生成式（Felix 現行管線）**：模型直接生成像素。擅長真人演出、情緒、氛圍、實景感。弱點：文字與 UI 會糊會亂、產品本體形狀不穩、同一角色跨鏡頭臉會漂移（已用多關鍵幀錨定緩解）、規格數字不可信。
+**生成式（本套件作者現行管線）**：模型直接生成像素。擅長真人演出、情緒、氛圍、實景感。弱點：文字與 UI 會糊會亂、產品本體形狀不穩、同一角色跨鏡頭臉會漂移（已用多關鍵幀錨定緩解）、規格數字不可信。
 
 **程式碼渲染（本批六項的共同路線）**：模型寫程式碼（HTML／Canvas／SVG／Three.js／GSAP／Remotion），逐幀確定性渲染。擅長精確：文字、數字、版面、產品幾何、品牌色全部可控、可重現、改一個數字重渲即可。弱點：做不出真人演出與實景質感，角色表演先天弱。
 
@@ -34,11 +34,11 @@
 
 - **裝置動作先量測，不憑空想**（motion-video-kit 的 product hero realism）：拿實機拍一段參考動作，量出關鍵角度與時間（measured angle keys），補間用 monotone cubic 保證不超程，相機鎖定，motion blur 用確定性累積式，不要隨機糊。燈光的任務是「揭露角度」不是打閃。
 - **本體用 Three.js 建模、場景做成 seekable**：任一時間點畫面可重現，抽幀檢查才成立；爆炸圖分層＋投影標註線（projected callouts）是規格揭露的現成 pattern。
-- **螢幕內容獨立製作再合成**：用真實 app 截圖／錄屏，或 HTML 重建 UI，貼回螢幕面做透視合成；螢幕的反光與霜面（screen frost）在合成層處理，維持跨鏡頭連續性。這條紀律與 Felix 先前做片的經驗一致：UI 交給生成模型必壞，永遠後期合成。
+- **螢幕內容獨立製作再合成**：用真實 app 截圖／錄屏，或 HTML 重建 UI，貼回螢幕面做透視合成；螢幕的反光與霜面（screen frost）在合成層處理，維持跨鏡頭連續性。這條紀律與本套件作者先前做片的經驗一致：UI 交給生成模型必壞，永遠後期合成。
 - **節奏照 launch 片文法**：前 3 秒 hook、規格一個一個揭露（每個揭露要有所本，reveal cued to something）、hero moment 留給最貴的那個功能；節奏數字可查 huashu（21 部）與 motion kit（28 部）兩套量測。
 - **聲音在時間軸階段就定**：選一首完整曲目做 back-timing，讓曲子的結尾落在 end card、切點對拍點；規格揭露與 hero moment 的音效要明確可聞，不要埋在音樂下。
 - **QA 兩段都要**：量測段（video-director 式：文字對比、品牌色、凍結幀、響度）抓技術缺陷；critic 段（Gauntlet 式：全新 context 只看實際渲染、逐項對 brief 驗證、留 ledger）抓一致性與說服力。兩段都過才出貨，critic 說了算的是下限，品味與客戶框架仍是上限（motion kit 案例：critics 說 SHIP 後客戶仍改七輪）。
-- **生成式只用在外圍**：生活情境、人物手持的氛圍鏡頭、情緒 B-roll 可以生成；凡是看得清螢幕或裝置本體的鏡頭不用生成。人物鏡頭沿用 Felix 現行多關鍵幀錨定流程控制臉漂移。
+- **生成式只用在外圍**：生活情境、人物手持的氛圍鏡頭、情緒 B-roll 可以生成；凡是看得清螢幕或裝置本體的鏡頭不用生成。人物鏡頭沿用 本套件作者現行多關鍵幀錨定流程控制臉漂移。
 
 **依 demo 類型速選**：
 - 手機規格／發表片：Three.js hero＋HyperFrames＋量測 QA＋Gauntlet（即 motion-video-kit 的主場打法）

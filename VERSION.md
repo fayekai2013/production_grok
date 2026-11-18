@@ -1,6 +1,6 @@
 # VERSION
 
-**AI Film Production Team: Install Package v1.3.1** (for Grok Bot) · released 2026-11-18 (UTC+8); supersedes v1.3, v1.2, v1.1 and v1.0 of the same date
+**AI Film Production Team: Install Package v1.3.2** (for Grok Bot) · released 2026-11-18 (UTC+8); supersedes v1.3.1, v1.3, v1.2, v1.1 and v1.0 of the same date
 
 | Component | Version | Canonical? |
 |---|---|---|
@@ -13,7 +13,7 @@
 | Previs builder (skills/previs-and-motion-guides/tools/) | 1.0 | Tool; the skill wins on conflict |
 | Templates (templates/) | 1.1 | Forms only; rules live in the skills |
 | Reference manual (reference/) | Manual v1.3 | **No.** Reference reading only |
-| Know-how library (knowledge_library/) | Film Production Knowledge Library v1 (package edition 1.3) | **No.** Reference reading; skills and standing rules win on conflict |
+| Know-how library (knowledge_library/) | Film Production Knowledge Library v1 (package edition 1.3.2) | **No.** Reference reading; skills and standing rules win on conflict |
 
 Generator basis: developed and measured with Grok Imagine (image and video). Other generators need their own capability check.
 

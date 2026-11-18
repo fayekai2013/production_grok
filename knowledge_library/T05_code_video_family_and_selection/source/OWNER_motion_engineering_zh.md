@@ -1,7 +1,7 @@
 # Motion Engineering（一人 Bot 動畫工作室）
 
 日期：2026-10-22 入庫
-來源：Felix 2026-10-22 分享的 X 貼文，Mori（@0xjmori）於 2026-10-18 發表的 X Article《Motion Engineering: One Bot, Five Departments, an Entire Studio》
+來源：本套件作者 2026-10-22 分享的 X 貼文，Mori（@0xjmori）於 2026-10-18 發表的 X Article《Motion Engineering: One Bot, Five Departments, an Entire Studio》
 證據等級：實務者方法論長文（作者為 2,229 追蹤的小帳號；文中無實測數字、無公開 repo）。技術棧本身（Claude Code、Remotion、FFmpeg、Remotion 官方 Agent Skills）皆為真實既有工具；「用 Opus 5.5 跑完整支片」的成果屬作者自述，未獨立驗證。
 
 ## 一句話概念
