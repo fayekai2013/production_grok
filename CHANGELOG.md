@@ -1,0 +1,47 @@
+# CHANGELOG
+
+## v1.3 (2026-11-18, UTC+8)
+
+**Team contributions merged; one canonical home per rule.**
+
+- **reference/:** manual v1.3 replaces v1.2. Merged the five role contributions into 3.3 (audience knowledge, accessory side and visibility, prop state, partial bodies, descriptions from the opened image, face-shot angle, licensed-character cues, ranked story check, timing fills, OR-1 package contents), 3.5/3.6 (reference hygiene, official design wins, signature side, OR-2 package contents), 3.7 (arrows as a separate reference, plate/skeleton rules, framing numbers, first+last does not control the middle, pack check, versioned round 2), 3.8/3.9 (reference cap, official design first, path shots first+last, fix order, end-frame check), 3.10 (QC procedure rewritten as 3.10.1–3.10.7), 3.11/3.12 (EDL by script, picture normalisation, MD5 for untouched ranges, true-peak fallback), 4.2 (canonical reference content rules), 4.9 (far-shoulder line marked untested, not a rule), 4.12 (B-block content-leak lines), 4.16 (previs tile fields, OR-3 board), 5.3, 6.2, 6.3, 9.1, 9.2.
+- **Team rulings:** face_shot=Y with no measurable face = QC FAIL (unmeasurable); Measurement & QC sums every project's generation log and calls stop about 2 points before the usage stop line; fix order trim/crop (re-check framing and face) → retime ≤1.2× → regenerate; round-1 files untouched during round 2 (MD5); path shots first+last frame, end frame must survive retiming; "far shoulder" wording is not a rule (log a deviation; untested); face-free costume crops untested; style references checked for unscripted gender/age/body traits.
+- **skills/ai-film-production-workflow:** §2.2.3 usage-tally owner; §2.3.2 wording for face shots, headcount, colours, prop counts, reference-rule pointer and far-side accessory note; §2.5.1 face shot with no measurable face = FAIL; §2.12 true-peak fallback (keep the ceiling, report the LU shortfall). **previs-and-motion-guides:** Step 8 gains the six canonical content-leak lines.
+- **roles/:** 02 story-check fix order matches the team order; 03 marks face-free costume crops untested; 04 adopts the Previs bot's tightened text (arrow reference on plain background; no text or reference of anyone not in frame); 05 Method 4 cites the canonical reference rules, Method 6 one fix per retry, Method 8 round-2 folders/MD5 and fix order, gate lines shortened (≤3 takes stays only in Fixed rules); 06 adds FAIL-unmeasurable and the usage tally. Every prompt ≤6,000 characters; shared preamble and fixed rules unchanged.
+- **knowledge_library/:** edition 1.3; T08 manual row points to manual v1.3; an owner box path in T08 replaced by a placeholder.
+
+## v1.2 (2026-11-18, UTC+8)
+
+**Know-how library added; full sources for every cited tech-radar item (owner rulings 2026-11-18).**
+
+- **knowledge_library/ (new):** Film Production Knowledge Library v1, package edition. README, KNOWLEDGE_ROUTER_EN.md, LIBRARY_INDEX.md, RIGHTS_AND_CITATIONS.md, nine topics (T01 generative video prompting / The Oath; T02 post-production vocabulary, 100 techniques; T03 HyperFrames; T04 motion direction / huashu-motion; T05 code-video family and route selection; T06 measured QC and local editing; T07 prompting agents, spec vs loop; T08 field lessons pointer; T09 adjacent sources), each with STUDY_NOTES_EN.md, ROLE_MAP.md and full `source/` files: public repos with their licences (Apache-2.0, MIT), the Oath article, the owner's dossiers in full, and third-party public items in full as attributed citation (original 100-techniques images, the verbatim prompt in the TECH-14 dossier, the CON-0002 report), each with author, URL, retrieval date and rights note. T08 manual link points to manual v1.2.
+- **skills/ai-film-production-workflow:** new section "Knowledge library (routing only)" before §2.0 (routing lines to T01–T07). **previs-and-motion-guides:** library route line under External research. **story-and-script-advisory:** product/launch story-shape route (T03 §4) and the owner's storytelling deck listed as an owner-preference source.
+- **roles/01–07:** shared preamble gains one sentence pointing to knowledge_library/KNOWLEDGE_ROUTER_EN.md (skills and standing rules win). Preamble wording tightened to stay under 6,000 characters; no rule or OR gate line removed. Per-role library routes live in each topic's ROLE_MAP.md, not in the prompts. 02 carries the Script & Story bot's own edits (accessory-side visibility, prop counts, partial bodies, colours from the opened reference, story-check fix order, face-shot wording). 03 adopts the Casting & Reference bot's reviewed version (new item 8: a reference carries everything visible in it; tighter wording).
+- **START_HERE EN/ZH, INSTALL.md:** contents and read order list the library; INSTALL explains `knowledge_library/…` = `<PACKAGE_LOCATION>/knowledge_library/…`. Version strings → v1.2 (the ZH title had still said v1.0).
+
+## v1.1 (2026-11-18, UTC+8)
+
+**Owner review gates OR-1 to OR-6 (owner ruling 2026-11-18).** Fixed hard gates in both QC modes, not kickoff options.
+
+- **skills/ai-film-production-workflow:** new §2.0a (verbatim canonical text): OR-1 script package (script, storyboard/shot details, all VO with timings); OR-2 character sheets and costume/look images; OR-3 start + middle keyframes per cut; OR-4 pre-video board with every shot's image, shot ID, seconds and exact VO; OR-5 no video, pilot takes included, until OR-1 to OR-4 are approved (recorded in 00_docs/APPROVALS.md); OR-6 paid API / paid route notice and a yes first. Gate rows G1–G4 changed (G3 is now all keyframes + the pre-video board; G4 pilot takes only after OR-5). Standing rule 6, §2.0 fixed-rules list, §2.1 pilot principle, §2.2.3, §2.2.4, pre-flight checks and the §2.14 checklist updated.
+- **supplement-1:** batch approval no longer lets a video batch or pilot start before OR-5; join strips precede the OR-4 board; picked concepts still pass OR-3/OR-4. **supplement-2:** sheet approval is OR-2 by the owner; paid lip-sync/TTS needs OR-6; checklist row updated. **previs-and-motion-guides** and **story-and-script-advisory:** owner-gate notes (packs feed OR-3/OR-4; the script team delivers the OR-1 package).
+- **roles/01–07:** shared preamble carries the OR-1..OR-6 line (preamble shortened to keep each prompt under 6,000 characters); each role states its part (Lead presents packages and records approvals; Script delivers OR-1; Casting OR-2; Previs and Generation OR-3 keyframes and the OR-4 board; Generation makes no video before OR-5 and no paid API without OR-6; QC auto-checks before the owner sees anything; Recorder logs approvals).
+- **templates/:** new APPROVALS.md and PRE_VIDEO_BOARD_SPEC.md (tile layout + generator script outline); KICKOFF_DECISIONS.md states the OR gates are fixed (KD-12 no longer lists G1–G4 approvers; KD-14 pilots only after OR-5); gen_count.csv gains paid_route and or6_approval columns; PROJECT_FOLDER_LAYOUT.md lists APPROVALS.md and the OR-4 board.
+- **START_HERE EN/ZH, Google Doc, INSTALL.md:** hard-rules summary and kickoff note include the OR gates; INSTALL treats any v1.x skill marker as an earlier package copy.
+- **reference/:** manual v1.2 (adds the owner review gates) replaces v1.1.
+
+## v1.0 (2026-11-18, UTC+8)
+
+First release of the film-agnostic install package.
+
+- **roles/:** seven complete role system prompts (Lead, Script & Story, Casting & Reference, Previs & Motion, Generation & Edit, Measurement & QC, Recorder & Playbook). Each one is under 6,000 characters and states: role, owns, does not, inputs, outputs, handoffs, rules, skills to load, the kickoff record and the QC mode.
+- **skills/:** five skills with YAML frontmatter.
+  - ai-film-production-workflow: generalised operating text, plus a new **team standing rules** block at the top. That block resolves the older overrides on take counts, staging, likeness anchor and thresholds. Also includes **§2.0 kickoff decisions**: loudness KD-1 has no team default, QC gate authority KD-2 is Mode A speed / Mode B gate with FAIL-KEPT, and KD-3 to KD-15 are confirmed per project. The loudness pass uses a kickoff-record target variable, and the G0/G5/G6 gates follow the QC mode.
+  - supplement-1 and supplement-2: generalised. Loudness re-measures follow the kickoff-record target, and size caps follow KD-3.
+  - story-and-script-advisory: self-contained. A reference library is optional ("if you have a reference library, link it here"), and the skill falls back to opened published sources.
+  - previs-and-motion-guides (new): a skill built from the previs operating procedure, with the guide-coordinate schema and leak-prevention lines.
+- **templates/:** kickoff decisions record, shot-list CSV header, gen_count.csv, prompt_log.csv, DEVIATIONS.md (DEV and FAIL-KEPT formats), QC report template, project folder layout.
+- **INSTALL.md:** idempotent bootstrap for the primary bot, using UpdateSkill, CreateAgent, CreateChannel and SendToAgent, followed by a verification step.
+- **START_HERE (EN canonical + ZH-TW companion).**
+- **reference/:** operating manual v1.1, for reference reading only.
+- Fixed rules carried unchanged: ≤ 20 min and ≤ 3 takes per shot; failed-shot discussion ≤ 10 min; natural staging; nothing generated before the plan is approved; approval before spend; security and privacy.

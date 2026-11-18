@@ -1,0 +1,40 @@
+# Library Index: read status and rights of every item (2026-11-18, UTC+8)
+
+Read status: **FULL** = read end to end · **PARTIAL** = parts read (stated) · **UNREAD** = known, not read.
+Rights (install-package edition, owner ruling 2026-11-18: cited material is included in full, with attribution): **PUBLIC** = public source with its licence or citation, copied in `source/` · **OWNER** = the owner's own dossier, copied in full in `source/` (`OWNER_*`) · **THIRD-PARTY** = public third-party work copied in full as attributed citation (`THIRDPARTY_*`, see its `CITATION.md`) · **OWNER-PRIVATE** = owner workspace documents that hold private project details; listed for completeness, not copied (their film-agnostic content is already in the skills and manual) · **OURS** = our English study notes. The Drive links point to the owner's own Drive and are not shared; the copies in this folder are the readable versions.
+
+| # | Item | Topic | Location | Read | Rights |
+|---|---|---|---|---|---|
+| 1 | Grok Imagine, "Inside Episode 1: The Oath" (article, all prompts) | T01 | https://x.com/i/article/2114831189475483648 · source/PUBLIC_…fulltext.md | FULL | PUBLIC (quoted with citation; keep the citation) |
+| 2 | VIDEO_PRODUCTION_GUIDELINES §0 (owner analysis of The Oath) | T01/T08 | https://drive.google.com/file/d/1g-ViSmrcjTHcytxQVxlJl2NObwC79-dH/view | FULL (§0 only) | OWNER-PRIVATE (contains project examples; its film-agnostic §0 method is restated in T01 and the skills) |
+| 3 | UT_Codex "AI video processing techniques 100" (original X images) | T02 | https://x.com/UT_Codex/status/2120350855425843375 | owner transcribed all 100 items (see #4); original images now copied, not re-read | THIRD-PARTY, copied in full: `T02_…/source/THIRDPARTY_UT_Codex_original_post/` (4 original images + post text + CITATION.md) |
+| 4 | TECH-39 owner dossier (100 items + analysis) | T02 | https://drive.google.com/file/d/1AwYDLXPvb1nlMPS8yTrUWvoIe_MUcdjW/view | FULL | OWNER, copied in full: `T02_…/source/OWNER_ONLY_TECH-39_dossier_zh.md` (file name kept from v1) |
+| 5 | TECH-35 owner slides "HyperFrames" (11 slides) | T03 | https://docs.google.com/presentation/d/1ONdo08cHHUuJGWZ0Qj4uJfSIaErv0GgWWK5hrOsD12Q/edit | FULL | OWNER, copied in full: `T03_…/source/OWNER_TECH-35_*.pptx` + text extract |
+| 6 | heygen-com/hyperframes @ebddc42: SKILL.md, spec, story, review, sound, hyperframes-cli, media-use | T03 | https://github.com/heygen-com/hyperframes | FULL | PUBLIC (Apache-2.0; LICENSE kept) |
+| 7 | hyperframes: motion.md (rules), README (top), types/launch.md (top ~30 lines) | T03 | same | PARTIAL | PUBLIC |
+| 8 | hyperframes: other references (format, runtimes, film, captions, overlays, storyboard, look, path-tracing), other types, skills figma/registry/remotion-to-hyperframes/reverse-any-video/slideshow/style-sampling, docs/ | T03 | same | UNREAD (storyboard/look are copied into source/ but unread) | PUBLIC |
+| 9 | TECH-34 owner study of huashu-motion (v0.1.1) | T04 | https://docs.google.com/document/d/1hXc1fNPGgdEHlpPQkzW5MSrTGl4X0LZPZ1fPp0OVZpU/edit | FULL | OWNER, copied in full: `T04_…/source/OWNER_TECH-34_*.md` |
+| 10 | alchaincyf/huashu-motion @f09dd7a: verification.md; rhythm.md (§1–§6 opening, about 140 of 300+ lines) | T04 | https://github.com/alchaincyf/huashu-motion | FULL / PARTIAL | PUBLIC (MIT; LICENSE kept) |
+| 11 | huashu-motion: SKILL.md, contract.md, README.en | T04 | same | PARTIAL (large part) | PUBLIC |
+| 12 | huashu-motion: director.md, sound.md, experience.md, punch-up.md, product-demo-continuity.md | T04 | same (copied into source/) | UNREAD | PUBLIC |
+| 13 | TECH-27 Code-Video map & phone-demo guide | T05 | https://drive.google.com/file/d/1jG3kI8MeDc0ZWX_WOrm7s-9jUySQlW0Q/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_code_video_map_zh.md` |
+| 14 | TECH-10 Motion Engineering dossier | T05 | https://drive.google.com/file/d/1IuMsH3qCim76zaCfVzrQheomks0yyaEc/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_motion_engineering_zh.md` |
+| 15 | TECH-12 Lemo-Opuscar dossier | T05 | https://drive.google.com/file/d/14OdKxd_Dgdc9j41bFf8t2J3giOELtrPM/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_lemo_opuscar_zh.md` |
+| 16 | TECH-15 video-director dossier | T05 | https://drive.google.com/file/d/1csHV7j1NEinhuMnxKtgyXJgww9xz2qYY/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_video_director_zh.md` |
+| 17 | TECH-17 motion-video-kit dossier | T05 | https://drive.google.com/file/d/14ijl_TZr46AdUPfgrj_56yYFU2UXkttC/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_motion_video_kit_zh.md` |
+| 18 | TECH-22 napali dossier | T05 | https://drive.google.com/file/d/17FzPQXHJ_qk1-lpHn1ssFe1SjNQpD4zr/view | FULL | OWNER, copied in full: `T05_…/source/OWNER_napali_zh.md` |
+| 19 | Upstream repos/articles for #14–#18 (Mori X article; lemo-opuscar, video-director, motion-video-kit, napali on GitHub) | T05 | see T05 table | UNREAD this pass | PUBLIC (MIT per dossiers; not verified) |
+| 20 | TECH-21 ffmpeg-skill dossier | T06 | https://drive.google.com/file/d/1Ab64CgvTTw7pB6SCnBWjMhfYzxBAIxNB/view | FULL | OWNER, copied in full: `T06_…/source/OWNER_TECH-21_*.md` |
+| 21 | kajisho5/ffmpeg-skill upstream | T06 | github.com/kajisho5/ffmpeg-skill | UNREAD this pass | PUBLIC (MIT per dossier) |
+| 22 | TECH-28 Art of Prompting dossier | T07 | https://drive.google.com/file/d/1fpCRAJ8JHHREiTVrmnj35MdK-knVR4-h/view | FULL | OWNER, copied in full: `T07_…/source/OWNER_TECH-28_*.md` |
+| 23 | TECH-14 spec-grade demo prompt dossier | T07 | https://drive.google.com/file/d/1G2HQpTKwIptUARfCfoTyJ6qEbQo_dQ-L/view | PARTIAL (method FULL; verbatim third-party prompt read by headings) | OWNER dossier + THIRD-PARTY prompt, copied in full: `T07_…/source/OWNER_TECH-14_*.md` (third-party prompt verbatim in its second half; see `T07_…/source/CITATION_TECH-14_third_party_prompt.md`) |
+| 24 | Athenaion public repo (PROMPT / ART BIBLE / CONTRACT) | T07 | via dossier | UNREAD this pass | PUBLIC (licence not verified) |
+| 25 | ai-film-production-workflow guide full text + research log + supplement 1 (Drive copies of our skills) | T08 | https://drive.google.com/file/d/1lp-_tLWSBdteyhbLKWlJNBZA9asQSg3G/view · https://drive.google.com/file/d/1obD-4N6I0yeQqgr4oJOBFquSIFdd55X8/view · https://drive.google.com/file/d/1-ZrKffylW3uTVjtLWL_Us--D0301PAN7/view | PARTIAL (headings; identical to the installed skills) | OURS (skills) |
+| 26 | Story & screenwriting library + router | T09 | https://drive.google.com/drive/folders/1tHv8tOKf4sQ4ZZ4_DlNuNYCX14eV9FXY | UNREAD here (it is the story role's own library) | OWNER-PRIVATE (the story role's own library; not copied) |
+| 27 | LIT-0005 owner storytelling deck (2019) | T09 | literature library | UNREAD (index row) | OWNER-PRIVATE (owner's own deck; not located in this pass, so not copied; ask the owner) |
+| 28 | CON-0002 Resemble AI Synthetic Advertising Report 2026 | T09 | https://39879154.fs1.hubspotusercontent-na1.net/hubfs/39879154/2026%20Synthetic%20Ad%20Report%20-%20Resemble%20AI.pdf (public PDF; identical MD5 to the owner's literature-library copy) | UNREAD (copied, not studied) | THIRD-PARTY, copied in full: `T09_…/source/THIRDPARTY_CON-0002_*.pdf` + text extract + CITATION.md |
+| 29 | Team sheet "影片與腳本製作知識分享（團隊）" | T09 | https://docs.google.com/spreadsheets/d/1iCgzHtdHt1-HUiahG10ka7Sj1Q177T8zLg4-mqTim08/edit | PARTIAL (tab structure) | OWNER-PRIVATE (holds private project details; not copied) |
+| 30 | "AI 影片團隊手冊 v0.2.3（中文）" | T09 | https://docs.google.com/document/d/1uEdTkR3rVxpKtemaGYokJwe6ZAYQVA5lqyUW2vFcLSM/edit | UNREAD | OWNER-PRIVATE (another assistant's draft; not copied) |
+| 31 | TECH-38 refactoring 100 · TECH-23 · TECH-24/30 (agent architecture) | excluded | tech library | not read (out of scope) | — |
+
+Install package and repository (v1.3): everything marked PUBLIC, OWNER and THIRD-PARTY above is copied in full (owner ruling 2026-11-18: cited material is included in full, with attribution); OWNER-PRIVATE items are listed only. Read status is unchanged by copying: a file being present does not mean it was read in full. See `RIGHTS_AND_CITATIONS.md`.

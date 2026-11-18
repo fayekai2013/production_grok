@@ -1,0 +1,114 @@
+
+=== Slide 1 ===
+HyperFrames 研究簡報
+Write HTML. Render video. 影片是一份可以編譯的原始檔
+這份簡報講三件事：它的流程是什麼、我們要準備什麼、模型到底走哪條路。
+新技術雷達，2026-10-21
+
+=== Slide 2 ===
+為什麼值得研究
+HeyGen 開源的框架，2026 年 3 月發布，本週在 GitHub Trending 上 68,580 stars（10 月 21 日查證）
+•  它把影片製作從生成式抽獎改成工程：HTML 是原始檔，渲染結果確定，改哪裡就重渲哪裡
+•  專門為 Agent 設計：內附 21 個 skills，coding agent 照著生產迴圈走，人負責審片與核准
+•  修改成本結構完全不同：傳統剪輯改一處動全片，這裡改一行字、一個時間點，幾分鐘重出
+•  開源免費（Apache 2.0），渲染在本機，不按生成次數計費
+一句話定位
+不是 AI 生成影片工具，是給 Agent 用的影片編譯器。畫面內容以排版、動態圖形、素材編排為主，不是實拍敘事。
+
+=== Slide 3 ===
+核心概念：影片是原始檔，不是抽獎結果
+因為是原始檔，所以可以版控、可以審查、可以重現。同一支片半年後重渲，結果一模一樣，這是它跟生成式影片最根本的差別。
+
+=== Slide 4 ===
+生產流程：五步迴圈
+人的工作集中在第 1 步給方向、第 4 步審片。寫、檢、渲都由 Agent 執行。
+
+=== Slide 5 ===
+一步一步：Agent 實際執行的開發迴圈
+指令來自官方 hyperframes-cli skill 的標準流程
+起專案
+npx hyperframes init <project>
+建立專案骨架，也可以用 capture 把一個網站抓成影片素材
+找素材與現成動效
+media-use / catalog
+先找現成的動效元件與素材，找不到才手寫，避免重造輪子
+寫合成
+編輯 index.html
+排版、放素材、接可定格的動畫時間軸
+檢查
+lint → check
+結構檢查加逐幀截圖檢查，文字與細節放大看，不只看縮圖
+預覽
+npx hyperframes preview
+開 Studio 預覽給你審，看完決定修訂或渲染
+渲染
+render --quality
+三檔畫質：draft 迭代用、looks 第一版正式編碼、delivery 交付
+
+=== Slide 6 ===
+要準備什麼
+三類：環境、素材、規格。都不難，難的只有先想清楚要做哪種片
+環境與工具
+•  Node.js 22 以上
+•  FFmpeg（渲染編碼）
+•  一個 coding agent：Claude Code、Codex、Cursor、Gemini CLI 任一
+•  安裝 skills：npx hyperframes skills update
+素材與內容
+•  文案與事實資料（Agent 會問缺的）
+•  圖片、影片片段、Logo 等媒體檔
+•  音樂或音效，沒有可由流程內處理
+•  參考片或參考網頁（有最好）
+規格與品牌
+•  片長、畫幅（橫式或直式）、解析度
+•  品牌色、字體、Logo 使用規範
+•  交付格式與畫質檔位
+•  審片人與核准流程
+不需要準備 production spec：官方流程就是給一句需求，Agent 先提方向、列出缺的資訊，再往下做。
+
+=== Slide 7 ===
+模型走哪條路
+你問的 OpenRouter 在這頁回答
+
+=== Slide 8 ===
+OpenRouter 的直接答案
+結論先講：不是預設路徑，也不必是
+•  HyperFrames 本身不呼叫任何模型。寫 HTML、想方向的是你的 coding agent，渲染是本地運算，兩件事分開
+•  模型費用與路線跟著 Agent 走：用 Claude Code 就是 Anthropic 的訂閱或 API，用 Codex 就是 OpenAI，框架不經手
+•  OpenRouter 只能間接接：你的 Agent 客戶端若支援自訂端點（例如 OpenCode 這類可設定 provider 的工具），模型呼叫可以改走 OpenRouter，但那是 Agent 端的設定，不是 HyperFrames 的功能
+•  渲染若不想吃本機算力，官方另有雲端選項：HeyGen 託管雲、AWS Lambda、Google Cloud Run，屬基礎設施選擇，跟模型無關
+
+=== Slide 9 ===
+21 個 Skills 的分工
+重點不是數量，是它把製作知識拆成了 Agent 能載入的模組
+路由與核心
+hyperframes（總路由）、hyperframes-core、hyperframes-cli、hyperframes-registry：決定走哪條工作流、提供合成與指令能力
+製作工作流
+general-video、product-launch-video、motion-graphics、music-to-video、faceless-explainer、slideshow、pr-to-video：依片種分流
+專項能力
+hyperframes-animation、hyperframes-keyframes、hyperframes-audio、embedded-captions、talking-head-recut、figma、remotion-to-hyperframes
+素材
+media-use：統一處理圖片、影片、聲音的取得與引用，寫合成之前先解決素材
+
+=== Slide 10 ===
+成本與邊界
+先講清楚適合與不適合，免得用錯地方
+適合
+•  產品介紹、功能解說、數據動態圖形
+•  社群短片、發表片、簡報轉影片
+•  需要反覆改版、重出多版本的工作
+•  有明確版面與品牌規範的片
+不適合
+•  實拍敘事、演員表演、真實場景
+•  需要生成式畫面奇觀的廣告片
+•  完全沒有素材、從零生成的視覺
+•  即時或直播類內容
+成本結構：框架免費，渲染吃本機 CPU 時間，真正的花費是 Agent 的模型用量與人的審片時間。這跟生成式影片按秒計費是兩種經濟模型。
+
+=== Slide 11 ===
+建議的試跑方式
+先用一支小片驗證整條迴圈，再決定要不要納入正式流程
+•  選題：一支 10 秒產品 intro，內容用現成素材與文案，不牽涉機密
+•  流程：裝 skills，用一句需求起案，走完規劃、寫合成、檢查、預覽、渲染五步
+•  驗收三件事：成片品質是否達可提案水準、改一處的來回時間、總耗時與模型用量
+•  對照組：同一支片用你現在的做法做一次，兩邊的時間與品質攤開比
+需要你決定的只有一件：試跑要用哪個產品或主題。你定了，我就照這條迴圈跑一次給你看。
