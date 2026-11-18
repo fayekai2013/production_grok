@@ -1,0 +1,22 @@
+{
+  "note": "Invented demo characters. Real people: standard proportions for age and script height, never measured from identity photos.",
+  "reference_character": "A",
+  "characters": {
+    "A": {
+      "height_cm": 170, "head_to_body": 7.5,
+      "shoulder_width_ratio": 0.23, "hip_width_ratio": 0.11,
+      "arm_length_ratio": 0.33, "leg_length_ratio": 0.47,
+      "relative_height": 1.0,
+      "label": "estimated", "source": "standard adult proportions (demo)",
+      "style_note": "realistic adult"
+    },
+    "B": {
+      "height_cm": 160, "head_to_body": 7.0,
+      "shoulder_width_ratio": 0.22, "hip_width_ratio": 0.115,
+      "arm_length_ratio": 0.33, "leg_length_ratio": 0.46,
+      "relative_height": 0.94,
+      "label": "estimated", "source": "standard adult proportions (demo)",
+      "style_note": "realistic adult"
+    }
+  }
+}

@@ -524,7 +524,7 @@ QC auto-checks run before the package is sent. Anything changed after OR-2 appro
 Prop sheets: 3/4 hero, front, back on grey; real dimensions, colours with names (and hex for products), every visible part; logo area blank. Location sheets / empty plates: no people, signs and screens blank, at the shot size they will be used for.
 
 ## 3.7 S5 — Previs and motion guides
-Goal: draw motion and camera so generation does not depend on text and chance. Full procedure in Part 9.1. Per shot:
+Goal: draw motion and camera so generation does not depend on text and chance. Full procedure in Part 9.1. Runnable builder (package v1.3.1): `skills/previs-and-motion-guides/tools/build_previs.py` with a worked demo and an EN/ZH step-by-step guide in the same folder (demo-tested only). Per shot:
 1. Choose **one control method** and write it on line 1 of INDEX.md: text only · first+last frame · empty plate + skeleton · first-frame arrows · segmented extension. Changing several variables at once makes failures unattributable.
 2. Draw the **top-down blocking / camera map** (positions, trajectories, camera position and move, timings).
 3. Draw the **arrow reference** (`arrows.png` on a plain background, plus an annotated version for humans); overlay arrows on a first frame only when "first-frame arrows" is that shot's method (item 9).

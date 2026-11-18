@@ -1,8 +1,10 @@
-# production_grok: an AI film production team of seven Grok Bots
+# production_grok: a film-agnostic AI film production team for Grok Bot
+
+> **Built for Grok Bot.** Hand this package to your primary Grok Bot and it sets up a seven-bot film production team for you: install package, 7 bot prompts, skills, SOP, previs tools and knowledge library. Free for anyone who needs it; see each knowledge-library item for its own licence.
 
 **English** · [繁體中文（台灣）](README.zh-TW.md)
 
-Version: install package **v1.3**, operating manual **v1.3**, Film Production Knowledge Library **v1 (package edition 1.3)** · 2026-11-18 (UTC+8) · private repository
+Version: install package **v1.3.1**, operating manual **v1.3**, previs builder **1.0**, Film Production Knowledge Library **v1 (package edition 1.3)** · 2026-11-18 (UTC+8) · public repository
 
 ---
 
@@ -176,6 +178,22 @@ A copy grants no licence; each item keeps its own rights. See [`knowledge_librar
 
 ---
 
+## 8a. Previs tools: draw the skeleton, motion and paths in Python first, then generate (new in v1.3.1)
+
+Generators guess whatever you do not show them: which hand, which way, when, and how big. The Previs & Motion bot therefore writes each shot's blocking as numbers (floor positions, facing, camera keys, prop paths, contact times) and lets [`build_previs.py`](skills/previs-and-motion-guides/tools/build_previs.py) compute the drawings: a top-down blocking and camera map, a screen-direction arrow sheet, joint-level skeleton keyposes (annotated for humans, clean for the generator), grey-box empty plates and the guide coordinates QC measures against. One command rebuilds every pack; built-in checks cover exact headcount, no text in clean images, no people in plates, the guide schema, contacts and arm reach. Python 3 with Pillow and numpy only.
+
+Step-by-step guide, every input field, reference order and QC use: [`tools/README.md`](skills/previs-and-motion-guides/tools/README.md) ([繁中](skills/previs-and-motion-guides/tools/README.zh-TW.md)). Worked demo (invented: A hands a cup across a table to B during a dolly-in): [`tools/example/`](skills/previs-and-motion-guides/tools/example/).
+
+| | |
+|---|---|
+| ![top-down map](skills/previs-and-motion-guides/tools/example/previs/S01/topdown.png) **Top-down map**: positions, 0.5 s path dots, camera start/end with field of view, dolly, 180° line | ![arrows](skills/previs-and-motion-guides/tools/example/previs/S01/arrows.png) **Arrow sheet**: screen direction and timing on a plain background |
+| ![annotated keypose](skills/previs-and-motion-guides/tools/example/previs/S01/k2_annotated.png) **Annotated keypose (humans)**: the hand-over at 2.0 s with yaw, elbow angles, hand heights, face width | ![clean keypose](skills/previs-and-motion-guides/tools/example/previs/S01/k2_clean.png) **Clean keypose (generator)**: same pose, no text, plain background |
+| ![first plate](skills/previs-and-motion-guides/tools/example/previs/plates/S01_first.png) **Empty plate, first frame** (grey box, no people) | ![last plate](skills/previs-and-motion-guides/tools/example/previs/plates/S01_last.png) **Empty plate, last frame**: same function, after the dolly-in |
+
+Status: demo-tested only (2026-11-18); not yet used on a production take.
+
+---
+
 ## 9. Folder map
 
 ```text
@@ -190,6 +208,7 @@ skills/                          five canonical skills
   ai-film-production-workflow-supplement-2/    dialogue films, costume changes, TTS, lip-sync
   story-and-script-advisory/                   script and story procedure
   previs-and-motion-guides/                    previs procedure, guide-coordinate schema, leak prevention
+    tools/                                     build_previs.py, example/ demo with outputs, README EN/ZH
 templates/                       KICKOFF_DECISIONS, APPROVALS, PRE_VIDEO_BOARD_SPEC, DEVIATIONS,
                                  QC_REPORT_TEMPLATE, PROJECT_FOLDER_LAYOUT, shot_list_header.csv,
                                  gen_count.csv, prompt_log.csv
@@ -223,6 +242,7 @@ Numbers from earlier productions are *instances, not targets*. Re-validate them 
   - The CON-0002 report was copied but not studied.
   - The verbatim third-party prompt in TECH-14 was read by its headings only.
   - The original 100-techniques images were copied; the owner's transcription is what was read in full.
+- **The previs builder is demo-tested only.** It ran on the invented demo; it has not been used on a production take, and grey-box plates as generator references are untested.
 - **One generator.** The numbers come from Grok Imagine. Other generators need their own capability check.
 - **Untested items stay labelled.** For example, cropping costume references faceless and placing accessories on the "far shoulder" are untested or failed. They are logged as QC deviations, not rules.
 - **Some cited items are not included.** These are owner-private workspace documents (a guidelines file with project examples, the team sheet, the story role's own library, another assistant's draft) and a storytelling deck that was not located. LIBRARY_INDEX lists them.

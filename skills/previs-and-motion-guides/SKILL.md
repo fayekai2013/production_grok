@@ -53,6 +53,9 @@ Know-how library routes (reference only, label [Ours, untested] until we have a 
 
 **Outputs per shot:** `previs/<SHOT_ID>/{INDEX.md, topdown.png, arrows.png, k*_annotated.png, k*_clean.png, <SHOT_ID>_guide_coords.json}`, `previs/plates/`, `previs/prompts/<SHOT_ID>_control[_vN].txt`, `previs/PROPORTIONS.md` + `proportions.json`, `previs/build_previs.py`, `previs/INDEX.md` (all shots).
 
+## Tools (package v1.3.1)
+`<PACKAGE_LOCATION>/skills/previs-and-motion-guides/tools/build_previs.py` (Python 3 + Pillow + numpy; copy it into the project's `previs/`) builds Steps 2–7 and the Step 10 checks from two coordinate-master files: `proportions.json` (Step 1 numbers) and one `shot_<ID>.json` per shot (camera keys, set boxes, moving props, floor waypoints and facing, keyposes, contacts). One command rebuilds every pack: `python3 build_previs.py --proportions proportions.json --shots "shot_*.json" --out previs`. It computes skeleton size from the lens and distance (prints face width px), checks reach, exact headcount, clean images free of text, plates free of people/markers, the guide-JSON schema below and contacts; exit code 1 on any FAIL. Guide `x_pct`/`y_pct` are as seen at time t (equal to first-frame coordinates for a locked-off camera). Steps 8–9 stay manual. Worked demo: `tools/example/` (outputs included). Field-by-field guide, reference use and QC use: `tools/README.md` / `tools/README.zh-TW.md` (same folder). Demo-tested only; not yet used on a production take. [Ours, untested on takes]
+
 ## Guide coordinates JSON (schema)
 ```json
 {
@@ -81,4 +84,4 @@ No arrows, lines, paths, markers or diagrams appear anywhere in the video.
 ## Time cap
 Pack work is a proposal of ≤ 15 minutes per shot; log actual minutes and shorten steps that cost time without improving the output.
 
-<!-- Skill from the AI Film Production Team Install Package v1.3 -->
+<!-- Skill from the AI Film Production Team Install Package v1.3.1 -->

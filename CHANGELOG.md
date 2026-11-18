@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v1.3.1 (2026-11-18, UTC+8)
+
+**Runnable previs builder: "draw the skeleton, motion and paths in Python first, then generate" (owner request 2026-11-18).**
+
+- **skills/previs-and-motion-guides/tools/ (new):** `build_previs.py` (Python 3, Pillow and numpy only; no project data). From `proportions.json` and one `shot_<ID>.json` per shot it builds, per shot, `topdown.png`, `arrows.png`, `k<N>_annotated.png` / `k<N>_clean.png` (joint-level skeletons computed from proportions, camera projection, screen angles and two-bone IK), `<SHOT_ID>_guide_coords.json` (skill schema, ≤0.5 s), `INDEX.md` (line 1 = control method) and grey-box `plates/<SHOT_ID>_first/_last.png` from one function. Built-in checks: exact headcount, clean images contain no text (no-text canvas plus palette check), plates free of people/marker colours, guide schema, contacts, reach, optional first-frame pixel cross-check; exit code 1 on FAIL. `example/`: invented two-person cup hand-over with a dolly-in (proportions.json, shot_S01.json, all outputs). `README.md` / `README.zh-TW.md`: install, every input field, how outputs map to Steps 1–10, which images go to the generator and in which order, QC use of the guide JSON, limits (demo-tested only).
+- **skills/previs-and-motion-guides/SKILL.md:** new "Tools" section; skill version 1.3.1. **INSTALL.md:** Step 2 notes that helper files stay in the package. **reference/:** one pointer line in manual 3.7 (file name unchanged). **README / README.zh-TW:** built-for-Grok-Bot wording, previs-tools section with demo images, public-repository note.
+
 ## v1.3 (2026-11-18, UTC+8)
 
 **Team contributions merged; one canonical home per rule.**

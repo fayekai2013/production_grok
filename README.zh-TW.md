@@ -1,8 +1,10 @@
-# production_grok：由七個 Grok Bot 組成的 AI 影片製作團隊
+# production_grok：給 Grok Bot 用、不綁定任何一部片的 AI 影片製作團隊
+
+> **專為 Grok Bot 打造。** 把這個安裝包交給你的主要 Grok Bot，它就會幫你建好一支七個 Bot 的影片製作團隊：安裝包、7 個 Bot 的提示詞、Skill、SOP、預演工具和知識庫都在裡面。有需要的人都可以用；知識庫裡每一項資料各有自己的授權，請看各項說明。
 
 [English](README.md) · **繁體中文（台灣）**
 
-版本：安裝包 **v1.3**、作業手冊 **v1.3**、影片製作知識庫 **v1（安裝包版 1.3）** · 2026-11-18（UTC+8）· 私人 repo
+版本：安裝包 **v1.3.1**、作業手冊 **v1.3**、預演產生器 **1.0**、影片製作知識庫 **v1（安裝包版 1.3）** · 2026-11-18（UTC+8）· 公開 repo
 
 ---
 
@@ -176,6 +178,22 @@ v1.3 把五個專業 Bot 在兩輪實際製作學到的東西併進來。以前�
 
 ---
 
+## 8a. 預演工具：先用 Python 畫出骨架、動作和路徑，再生成（v1.3.1 新增）
+
+生成工具會猜所有你沒給它看的東西：哪隻手、往哪走、什麼時候、畫多大。所以預演與動作設計 Bot 先把每個鏡頭的走位寫成數字（地板位置、面向、攝影機 key、道具路徑、接觸時間），再讓 [`build_previs.py`](skills/previs-and-motion-guides/tools/build_previs.py) 算出圖：俯視走位與攝影機圖、畫面方向箭頭圖、關節層級的骨架關鍵姿勢（標註版給人看、乾淨版給生成工具）、灰盒空景，以及 QC 拿來比對的軌跡座標。一行指令重建所有預演包；內建檢查包括確切人數、乾淨版沒有文字、空景沒有人、軌跡格式、接觸和手搆不搆得到。只需要 Python 3、Pillow 和 numpy。
+
+逐步說明、每個輸入欄位、參考圖順序和 QC 用法：[`tools/README.zh-TW.md`](skills/previs-and-motion-guides/tools/README.zh-TW.md)（[English](skills/previs-and-motion-guides/tools/README.md)）。完整示範（虛構：推軌鏡頭中，A 隔著桌子把杯子遞給 B）：[`tools/example/`](skills/previs-and-motion-guides/tools/example/)。
+
+| | |
+|---|---|
+| ![俯視圖](skills/previs-and-motion-guides/tools/example/previs/S01/topdown.png) **俯視圖**：位置、每 0.5 秒的路徑點、攝影機起點／終點和視角、推軌、180° 線 | ![箭頭圖](skills/previs-and-motion-guides/tools/example/previs/S01/arrows.png) **箭頭圖**：素色背景上的畫面方向和時間 |
+| ![標註版](skills/previs-and-motion-guides/tools/example/previs/S01/k2_annotated.png) **標註版關鍵姿勢（給人看）**：2.0 秒交接瞬間，附身體角度、手肘角度、手的高度、臉寬 | ![乾淨版](skills/previs-and-motion-guides/tools/example/previs/S01/k2_clean.png) **乾淨版關鍵姿勢（給生成工具）**：同一個姿勢，沒有文字、素色背景 |
+| ![第一格空景](skills/previs-and-motion-guides/tools/example/previs/plates/S01_first.png) **第一格空景**（灰盒，沒有人） | ![最後一格空景](skills/previs-and-motion-guides/tools/example/previs/plates/S01_last.png) **最後一格空景**：同一個函式，推軌之後 |
+
+狀態：只在示範上測過（2026-11-18），還沒用在正式拍攝的成片上。
+
+---
+
 ## 9. 資料夾地圖
 
 ```text
@@ -190,6 +208,7 @@ skills/                          五個正式 Skill
   ai-film-production-workflow-supplement-2/    對白片、換裝、TTS、對嘴
   story-and-script-advisory/                   腳本與故事作業程序
   previs-and-motion-guides/                    預演作業程序、軌跡座標格式、防止控制圖外洩
+    tools/                                     build_previs.py、example/ 示範和產出、中英文說明
 templates/                       KICKOFF_DECISIONS、APPROVALS、PRE_VIDEO_BOARD_SPEC、DEVIATIONS、
                                  QC_REPORT_TEMPLATE、PROJECT_FOLDER_LAYOUT、shot_list_header.csv、
                                  gen_count.csv、prompt_log.csv
@@ -223,6 +242,7 @@ knowledge_library/               README、索引路由、清單、版權說明�
   - CON-0002 報告收了，但還沒研究。
   - TECH-14 裡那段第三方 prompt 只看過標題。
   - 100 選的四張原圖收進來了，完整讀過的是負責人的轉錄。
+- **預演產生器只在示範上測過。** 它跑過虛構示範，還沒用在正式拍攝的成片上；拿灰盒空景當生成參考圖也未測。
 - **只用過一種生成工具。** 數字都來自 Grok Imagine，換工具要另外確認能力。
 - **沒測過的照樣標示。** 例如服裝參考圖裁成不露臉，還沒測過；配件放在「遠側肩膀」的寫法，試過但失敗。這兩項都記成 QC 偏差，不是規則。
 - **有些引用的資料沒有收錄。** 這些是負責人的私人工作文件（含專案實例的指引檔、團隊試算表、腳本角色自己的知識庫、另一個助理的草稿），還有一份沒找到的說故事簡報。LIBRARY_INDEX 有列出來。

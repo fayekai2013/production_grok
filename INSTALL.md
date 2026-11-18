@@ -59,6 +59,7 @@ For each row, read the file and take `name` and `description` from its YAML fron
 - **Exists and identical:** skip it.
 - **Exists, differs, and its last line is `<!-- Skill from the AI Film Production Team Install Package v1.x -->` (any v1 version, e.g. v1.0):** this is an earlier copy from this package. Overwrite it.
 - **Exists, differs, without that marker:** it belongs to the user. Do not overwrite it. Ask the user once whether to replace it, and continue with the other skills meanwhile.
+- Only each SKILL.md is saved as a skill. Helper files stay in the package: `skills/previs-and-motion-guides/tools/` (the previs builder, its demo and guides) is read from `<PACKAGE_LOCATION>` by the Previs & Motion bot when it needs it.
 - If UpdateSkill rejects a body as too long, report the size and the error to the user. Do not shorten or summarise a skill yourself.
 
 ## Step 3: Become the Lead (memory)
